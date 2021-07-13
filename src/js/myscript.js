@@ -1,5 +1,5 @@
-console.log('Welcome to HackerU-JustCode Assignment');
-
+const fetch = require('node-fetch')
+const url = 'https://www.justcode.com/dataservice/api/phoneManufacturer/list'
 
 /*
 PURPOSE;
@@ -9,10 +9,14 @@ PURPOSE;
     - Response data format: JSON
 */
 
-
 $(document).ready(function() {
     getRemoteData();
 });
 function getRemoteData() {
-    // write your code here to fetch data from api.
+// write your code here to fetch data from api.
+    fetch(url)
+        .then(response => response.json())
+        .then(data => console.log(data));
 }
+
+getRemoteData()
