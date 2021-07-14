@@ -16,18 +16,19 @@
   <!-- Custom styles for this template -->
   <link href="css/custom.css" rel="stylesheet">
 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+          type="text/javascript"></script>
 </head>
 
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top">
       <img src="assets/jc_logo.png" class="logo"/>
   </nav>
 
+
   <!-- Page Content -->
   <div class="container">
-    
     <table id="mytable">
       <thead>
         <tr>
@@ -47,14 +48,33 @@
             ModifiedOn
           </th>
         </tr>
+        <tr>
+          <td id="output1"></td>
+          <td id="output2"></td>
+          <td id="output3"></td>
+          <td id="output4"></td>
+          <td id="output5"></td>
+        </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
-
-
   </div>
   <!-- /.container -->
+
+<!--  var data = {
+    "dataAry": [
+      { headquarters: 'Espoo, Finland',
+        modifiedOn: '2017-01-31 10:00:00',
+        manufacturerName: 'Nokia',
+        nameOfCEO: 'Rajeev Suri',
+        id: 1 },
+      { headquarters: 'Haidian District, Beijing, China',
+        modifiedOn: '2017-01-31 10:00:00',
+        manufacturerName: 'Xiaomi',
+        nameOfCEO: 'Lei Jun',
+        id: 2 }]
+  }-->
 
 
   <!-- Footer -->
