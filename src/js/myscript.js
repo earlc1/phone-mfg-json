@@ -1,4 +1,4 @@
-const fetch = require('node-fetch')
+//const fetch = require('node-fetch')
 const url = 'https://www.justcode.com/dataservice/api/phoneManufacturer/list'
 
 /*
@@ -11,10 +11,12 @@ PURPOSE;
 
 
 // Makes function available after document is loaded
-$(document).ready(function() {
+/*$(document).ready(function() {
+    console.log("document ready")
     getRemoteData();
-});
+});*/
 
+var table0 = document.getElementById('mytable')
 
 function getRemoteData() {
 // write your code here to fetch data from api.
@@ -22,26 +24,25 @@ function getRemoteData() {
         .then(response => response.json())
         // .then(data => console.log(data));     This works
         .then(data => {
-            console.log(data)
-            // What object data to write out
-            for (var x = 0; data.length; x++) {
+            for (var x=0; x<data.length; x++) {
                 var phoneMfr = data[x]
                 console.log(phoneMfr)
-                output1.innerHTML += phoneMfr.id + "<br>"
-                output2.innerHTML += phoneMfr.headquarters + "<br>"
-                output3.innerHTML += phoneMfr.manufacturerName + "<br>"
-                output4.innerHTML += phoneMfr.nameOfCEO + "<br>"
-                output5.innerHTML += phoneMfr.modifiedOn + "<br>"
+                table0.innerHTML += `<tr><td>${phoneMfr.id}</td><td>${phoneMfr.manufacturerName}</td><td>${phoneMfr.nameOfCEO}</td><td>${phoneMfr.headquarters}</td><td>${phoneMfr.modifiedOn}</td></tr>`
+                }
             }
-            // Where to write object data
-            var output1=document.getElementById('output1')
-            var output2=document.getElementById('output2')
-            var output3=document.getElementById('output3')
-            var output4=document.getElementById('output4')
-            var output5=document.getElementById('output5')
-        }
         )
         .catch(err => console.error(err))
 }
 
+
 getRemoteData()
+
+
+
+/*
+output1.innerHTML += phoneMfr.id + "<br>"
+output2.innerHTML += phoneMfr.headquarters + "<br>"
+output3.innerHTML += phoneMfr.manufacturerName + "<br>"
+output4.innerHTML += phoneMfr.nameOfCEO + "<br>"
+output5.innerHTML += phoneMfr.modifiedOn + "<br>"
+*/
