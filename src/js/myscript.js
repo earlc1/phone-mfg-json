@@ -1,4 +1,3 @@
-//const fetch = require('node-fetch')
 const url = 'https://www.justcode.com/dataservice/api/phoneManufacturer/list'
 
 /*
@@ -11,10 +10,10 @@ PURPOSE;
 
 
 // Makes function available after document is loaded
-/*$(document).ready(function() {
+$(document).ready(function() {
     console.log("document ready")
     getRemoteData();
-});*/
+});
 
 var table0 = document.getElementById('mytable')
 
@@ -33,16 +32,3 @@ function getRemoteData() {
         )
         .catch(err => console.error(err))
 }
-
-
-getRemoteData()
-
-
-
-/*
-output1.innerHTML += phoneMfr.id + "<br>"
-output2.innerHTML += phoneMfr.headquarters + "<br>"
-output3.innerHTML += phoneMfr.manufacturerName + "<br>"
-output4.innerHTML += phoneMfr.nameOfCEO + "<br>"
-output5.innerHTML += phoneMfr.modifiedOn + "<br>"
-*/
